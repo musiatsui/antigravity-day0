@@ -501,6 +501,125 @@
         transform: scale(0.85);
       }
     }
+
+    /* =========================================
+       반응형 스타일 (768px 이하 모바일 / 태블릿)
+       ========================================= */
+    @media (max-width: 768px) {
+      /* 1. 헤더: 세로 정렬 및 터치 친화적 메뉴 */
+      .site-header {
+        flex-direction: column;
+        padding: 1.25rem 1.25rem;
+        gap: 1rem;
+        position: static;
+      }
+
+      .site-header .logo h2 {
+        font-size: 1.3rem;
+      }
+
+      .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+      }
+
+      .nav-menu li {
+        width: 100%;
+      }
+
+      .nav-menu li a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 0.65rem 1rem;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        font-size: 0.92rem;
+      }
+
+      /* 2. 공통 섹션 타이틀 */
+      .section-title {
+        font-size: 1.75rem;
+      }
+
+      .section-desc {
+        font-size: 0.92rem;
+        padding: 0 0.5rem;
+      }
+
+      .section-header {
+        margin-bottom: 2rem;
+      }
+
+      /* 3. 핵심 기능 섹션: 자연스러운 모바일 세로 배치 */
+      .feature-section {
+        min-height: auto;
+        padding: 3rem 1.25rem 4rem;
+      }
+
+      .container {
+        padding: 2.5rem 1.5rem;
+        border-radius: 24px;
+      }
+
+      h1 {
+        font-size: clamp(1.8rem, 6.5vw, 2.3rem);
+        min-height: auto;
+      }
+
+      .action-container {
+        margin-top: 1.75rem;
+      }
+
+      .cheer-btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        padding: 12px 24px;
+      }
+
+      /* 배경 구체 모바일 최적화 (가로 스크롤 방지) */
+      .ambient-sphere-1 {
+        width: 320px;
+        height: 320px;
+        top: -5%;
+        left: -10%;
+      }
+
+      .ambient-sphere-2 {
+        width: 300px;
+        height: 300px;
+        bottom: -5%;
+        right: -10%;
+      }
+
+      /* 4. 사용자 후기 섹션: 1열 세로 스택 */
+      .review-section {
+        padding: 3.5rem 1.25rem 4.5rem;
+      }
+
+      .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .review-card {
+        padding: 1.75rem 1.5rem;
+        border-radius: 20px;
+      }
+
+      .review-avatar {
+        width: 56px;
+        height: 56px;
+      }
+
+      /* 5. 푸터 */
+      .site-footer {
+        padding: 1.25rem 1rem;
+        font-size: 0.85rem;
+      }
+    }
   </style>
 </head>
 
