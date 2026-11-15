@@ -75,12 +75,24 @@
       border-bottom: 2px solid var(--primary-green);
     }
 
-    /* 제목: 굵게 */
+    /* 제목: 굵게 및 별 아이콘 정렬 */
     .site-header .logo h2 {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       font-size: 1.4rem;
       font-weight: 700;
       letter-spacing: -0.02em;
       color: #ffffff;
+    }
+
+    .header-star-icon {
+      width: 19px;
+      height: 19px;
+      fill: currentColor;
+      color: #ffffff;
+      flex-shrink: 0;
+      filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
     }
 
     .site-header .logo h2 span {
@@ -496,7 +508,12 @@
   <!-- 헤더 구역 -->
   <header class="site-header">
     <div class="logo">
-      <h2>나의 첫 <span>서비스</span></h2>
+      <h2>
+        <svg class="header-star-icon" viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true">
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+        </svg>
+        <span>나의 첫 <span>서비스</span></span>
+      </h2>
     </div>
     <nav>
       <ul class="nav-menu">
