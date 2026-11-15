@@ -533,14 +533,14 @@
         font-size: 1.25rem;
       }
 
-      /* 햄버거 토글 버튼 (모바일 전용) */
+      /* 햄버거 토글 버튼 (모바일 손가락 터치 최적화) */
       .menu-toggle {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 36px;
-        height: 32px;
-        padding: 6px 7px;
+        width: 40px;
+        height: 36px;
+        padding: 7px 8px;
         background: rgba(255, 255, 255, 0.12);
         border: 1px solid rgba(255, 255, 255, 0.25);
         border-radius: 8px;
@@ -563,7 +563,7 @@
 
       /* 햄버거 활성화 시 'X' 아이콘으로 전환 */
       .menu-toggle.active .hamburger-bar:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
       }
 
       .menu-toggle.active .hamburger-bar:nth-child(2) {
@@ -571,7 +571,7 @@
       }
 
       .menu-toggle.active .hamburger-bar:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
       }
 
       /* 내비게이션 드롭다운 컨테이너 */
@@ -609,14 +609,18 @@
         width: 100%;
       }
 
+      /* 모바일 메뉴 링크 터치 타깃 최적화 */
       .nav-menu li a {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100%;
+        min-height: 46px;
         text-align: center;
-        padding: 0.75rem 1rem;
+        padding: 0.8rem 1rem;
         background: rgba(255, 255, 255, 0.08);
         border-radius: 10px;
-        font-size: 0.95rem;
+        font-size: 0.92rem;
       }
 
       .nav-menu li a:hover {
@@ -624,86 +628,116 @@
         color: var(--primary-green);
       }
 
-      /* 2. 공통 섹션 타이틀 */
+      /* 2. 공통 섹션 폰트 조정 (모바일 가독성 최적화) */
       .section-title {
-        font-size: 1.75rem;
+        font-size: 1.65rem;
       }
 
       .section-desc {
-        font-size: 0.92rem;
+        font-size: 0.88rem;
+        line-height: 1.55;
         padding: 0 0.5rem;
       }
 
       .section-header {
-        margin-bottom: 2rem;
+        margin-bottom: 1.75rem;
       }
 
       /* 3. 핵심 기능 섹션: 자연스러운 모바일 세로 배치 */
       .feature-section {
         min-height: auto;
-        padding: 3rem 1.25rem 4rem;
+        padding: 2.75rem 1.25rem 3.5rem;
       }
 
       .container {
-        padding: 2.5rem 1.5rem;
+        padding: 2.25rem 1.25rem;
         border-radius: 24px;
       }
 
+      .badge {
+        font-size: 12px;
+        padding: 5px 12px;
+        margin-bottom: 1rem;
+      }
+
       h1 {
-        font-size: clamp(1.8rem, 6.5vw, 2.3rem);
+        font-size: clamp(1.75rem, 6.2vw, 2.2rem);
         min-height: auto;
       }
 
       .action-container {
-        margin-top: 1.75rem;
+        margin-top: 1.5rem;
       }
 
+      /* 손가락으로 누르기 편한 모바일 터치 타깃 버튼 (최소 50px 높이 & 넉넉한 패딩) */
       .cheer-btn {
         width: 100%;
-        max-width: 280px;
+        max-width: 300px;
+        min-height: 50px;
         justify-content: center;
-        padding: 12px 24px;
+        padding: 14px 28px;
+        font-size: 15px;
+        border-radius: 9999px;
       }
 
       /* 배경 구체 모바일 최적화 (가로 스크롤 방지) */
       .ambient-sphere-1 {
-        width: 320px;
-        height: 320px;
+        width: 300px;
+        height: 300px;
         top: -5%;
         left: -10%;
       }
 
       .ambient-sphere-2 {
-        width: 300px;
-        height: 300px;
+        width: 280px;
+        height: 280px;
         bottom: -5%;
         right: -10%;
       }
 
-      /* 4. 사용자 후기 섹션: 1열 세로 스택 */
+      /* 4. 사용자 후기 섹션: 모바일 본문 폰트 및 카드 여백 최적화 */
       .review-section {
-        padding: 3.5rem 1.25rem 4.5rem;
+        padding: 3.25rem 1.25rem 4rem;
       }
 
       .reviews-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1.25rem;
       }
 
       .review-card {
-        padding: 1.75rem 1.5rem;
+        padding: 1.6rem 1.35rem;
         border-radius: 20px;
       }
 
       .review-avatar {
-        width: 56px;
-        height: 56px;
+        width: 52px;
+        height: 52px;
+      }
+
+      .review-user-meta h4 {
+        font-size: 1.05rem;
+      }
+
+      .review-user-meta p {
+        font-size: 0.8rem;
+      }
+
+      .review-rating {
+        font-size: 0.95rem;
+        margin-bottom: 0.75rem;
+      }
+
+      /* 모바일 후기 본문 폰트 약간 축소 (0.98rem -> 0.88rem) */
+      .review-text {
+        font-size: 0.88rem;
+        line-height: 1.65;
       }
 
       /* 5. 푸터 */
       .site-footer {
         padding: 1.25rem 1rem;
-        font-size: 0.85rem;
+        font-size: 0.82rem;
       }
     }
   </style>
