@@ -287,7 +287,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 13px 30px;
+      padding: 13px 32px;
       border-radius: 9999px;
       font-size: 15px;
       font-weight: 600;
@@ -298,25 +298,12 @@
       /* 기본 색상: 주 색상 (연한 녹색) */
       background: var(--primary-green);
       color: var(--secondary-dark);
-      box-shadow: 0 4px 16px rgba(74, 222, 128, 0.4);
-      transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+      box-shadow: 0 4px 16px rgba(74, 222, 128, 0.35);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      will-change: transform;
     }
 
-    /* 호버 색상: 보조 색상 (어두운 계열 다크 포레스트 그린) */
-    .cheer-btn:hover {
-      background: var(--secondary-dark);
-      color: #ffffff;
-      border-color: var(--secondary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(6, 78, 59, 0.35);
-    }
-
-    .cheer-btn:active {
-      transform: translateY(0);
-      box-shadow: 0 3px 10px rgba(6, 78, 59, 0.25);
-    }
-
-    /* 상태별 테마 변형 */
+    /* 상태별 테마 기본 배경 */
     .cheer-btn.theme-1 {
       background: #86efac;
       border-color: #4ade80;
@@ -335,6 +322,23 @@
     .cheer-btn.theme-4 {
       background: #6ee7b7;
       border-color: #34d399;
+    }
+
+    /* 호버 효과: 마우스를 올리면 살짝 확대(scale 1.06) 및 보조 색상(다크 포레스트 그린)으로 색상 전환 */
+    .cheer-btn:hover,
+    .cheer-btn[class*="theme-"]:hover {
+      background: var(--secondary-dark);
+      color: #ffffff;
+      border-color: var(--secondary-dark);
+      transform: scale(1.06) translateY(-2px);
+      box-shadow: 0 10px 28px rgba(6, 78, 59, 0.38), 0 0 15px rgba(74, 222, 128, 0.3);
+    }
+
+    /* 클릭 시 살짝 눌리는 인터랙션 */
+    .cheer-btn:active,
+    .cheer-btn[class*="theme-"]:active {
+      transform: scale(0.98);
+      box-shadow: 0 4px 12px rgba(6, 78, 59, 0.25);
     }
 
     /* =========================================
