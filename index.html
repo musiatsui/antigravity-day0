@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>나의 첫 서비스 - 힐링 & 응원 메시지</title>
+  <!-- 프리텐다드(Pretendard) 웹폰트: 한글 가독성 최적화 -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <style>
     /* =========================================
        색상 테마 변수 (Color Scheme)
@@ -45,9 +47,15 @@
       display: flex;
       flex-direction: column;
       background: var(--bg-base);
-      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Segoe UI", Roboto, sans-serif;
+      /* 가독성 높은 프리텐다드(Pretendard) 및 시스템 폴백 폰트 적용 */
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      font-weight: 400; /* 본문 기본: 일반 굵기 */
+      line-height: 1.6;
+      letter-spacing: -0.02em; /* 한글 최적 자간 */
       overflow-x: hidden;
       color: var(--text-dark);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     /* 1. 헤더 영역: 보조 색상(어두운 딥 포레스트 그린) & 주 색상(연한 녹색) 포인트 */
@@ -67,6 +75,7 @@
       border-bottom: 2px solid var(--primary-green);
     }
 
+    /* 제목: 굵게 */
     .site-header .logo h2 {
       font-size: 1.4rem;
       font-weight: 700;
@@ -89,7 +98,7 @@
       color: rgba(255, 255, 255, 0.9);
       text-decoration: none;
       font-size: 0.95rem;
-      font-weight: 600;
+      font-weight: 500;
       letter-spacing: -0.01em;
       padding: 0.45rem 0.85rem;
       border-radius: 8px;
@@ -122,7 +131,7 @@
     .section-tag {
       display: inline-block;
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--secondary-dark);
       background: rgba(134, 239, 172, 0.35);
       border: 1px solid rgba(74, 222, 128, 0.4);
@@ -133,6 +142,7 @@
       text-transform: uppercase;
     }
 
+    /* 섹션 제목: 굵게 */
     .section-title {
       font-size: 2.1rem;
       font-weight: 800;
@@ -141,12 +151,14 @@
       margin-bottom: 0.5rem;
     }
 
+    /* 섹션 본문 설명: 일반 굵기 */
     .section-desc {
-      font-size: 0.98rem;
+      font-size: 1rem;
+      font-weight: 400;
       color: var(--text-muted);
       max-width: 520px;
       margin: 0 auto;
-      line-height: 1.55;
+      line-height: 1.6;
     }
 
     /* =========================================
@@ -229,7 +241,7 @@
       border: 1px solid rgba(134, 239, 172, 0.7);
       border-radius: 9999px;
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--secondary-dark);
       letter-spacing: -0.01em;
       margin-bottom: 1.25rem;
@@ -245,7 +257,7 @@
       animation: pulseDot 2s infinite;
     }
 
-    /* 메인 타이틀 */
+    /* 메인 타이틀: 굵게 */
     h1 {
       font-size: 40px;
       font-weight: 800;
@@ -265,9 +277,7 @@
     }
 
     /* =========================================
-       버튼 스타일링: 
-       기본 색상 = 주 색상 (연한 녹색)
-       호버 색상 = 보조 색상 (어두운 포레스트 그린)
+       버튼 스타일링
        ========================================= */
     .action-container {
       margin-top: 2rem;
@@ -280,7 +290,7 @@
       padding: 13px 30px;
       border-radius: 9999px;
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 600;
       border: 2px solid var(--primary-green-hover);
       cursor: pointer;
       letter-spacing: -0.01em;
@@ -306,7 +316,7 @@
       box-shadow: 0 3px 10px rgba(6, 78, 59, 0.25);
     }
 
-    /* 상태별 테마 변형 (모두 기본은 연녹색 계열, 호버 시 보조 다크 색상 적용) */
+    /* 상태별 테마 변형 */
     .cheer-btn.theme-1 {
       background: #86efac;
       border-color: #4ade80;
@@ -396,6 +406,7 @@
       box-shadow: 0 4px 14px rgba(6, 78, 59, 0.15);
     }
 
+    /* 후기 작성자 이름: 굵게 */
     .review-user-meta h4 {
       font-size: 1.15rem;
       font-weight: 700;
@@ -404,10 +415,11 @@
       margin-bottom: 2px;
     }
 
+    /* 후기 작성자 직군: 일반 굵기 */
     .review-user-meta p {
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
-      font-weight: 600;
+      font-weight: 400;
     }
 
     .review-rating {
@@ -417,6 +429,7 @@
       letter-spacing: 2px;
     }
 
+    /* 후기 본문: 일반 굵기 */
     .review-text {
       font-size: 0.98rem;
       line-height: 1.7;
@@ -424,7 +437,7 @@
       font-weight: 400;
     }
 
-    /* 3. 푸터 영역: 보조 색상과 자연스럽게 어우러지는 톤 */
+    /* 3. 푸터 영역: 일반 굵기 */
     .site-footer {
       width: 100%;
       background-color: #dcfce7;
@@ -433,7 +446,7 @@
       padding: 1.6rem 2rem;
       text-align: center;
       font-size: 0.92rem;
-      font-weight: 600;
+      font-weight: 400;
       position: relative;
       z-index: 10;
     }
